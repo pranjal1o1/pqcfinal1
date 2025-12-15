@@ -1,0 +1,1637 @@
+{
+  "metadata": {
+    "generated_at": "2025-12-14T17:12:05.186795",
+    "total_vulnerabilities": 500,
+    "model_accuracy": 0.944
+  },
+  "vulnerabilities": [
+    {
+      "id": "VULN_0129",
+      "priority_rank": 1,
+      "priority_score": 93.25,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 3072,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.812,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 141,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Critical business system (8/10)",
+          "Compliance gap (0.68)",
+          "Old certificate (47 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 141 days."
+      }
+    },
+    {
+      "id": "VULN_0174",
+      "priority_rank": 2,
+      "priority_score": 93.25,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 1024,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.944,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 63,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Weak algorithm (RSA-1024)",
+          "Critical business system (8/10)",
+          "Compliance gap (0.68)",
+          "Old certificate (52 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 63 days."
+      }
+    },
+    {
+      "id": "VULN_0124",
+      "priority_rank": 3,
+      "priority_score": 92.42,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 160,
+        "system_type": "storage"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.723,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 63,
+        "migration_complexity": "Medium-High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Weak algorithm (ECC-160)",
+          "Critical business system (8/10)",
+          "Compliance gap (0.63)",
+          "Old certificate (58 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 63 days."
+      }
+    },
+    {
+      "id": "VULN_0055",
+      "priority_rank": 4,
+      "priority_score": 92.3,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 224,
+        "system_type": "communication"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.707,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 78,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Weak algorithm (ECC-224)",
+          "Critical business system (8/10)",
+          "Compliance gap (0.62)",
+          "Old certificate (57 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 78 days."
+      }
+    },
+    {
+      "id": "VULN_0050",
+      "priority_rank": 5,
+      "priority_score": 92.23,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 1024,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.935,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 50,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Weak algorithm (RSA-1024)",
+          "Critical business system (10/10)",
+          "Old certificate (53 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 50 days."
+      }
+    },
+    {
+      "id": "VULN_0241",
+      "priority_rank": 6,
+      "priority_score": 92.2,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 3072,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.828,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 101,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Compliance gap (0.68)",
+          "Old certificate (56 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 101 days."
+      }
+    },
+    {
+      "id": "VULN_0140",
+      "priority_rank": 7,
+      "priority_score": 91.72,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 160,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.85,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 50,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Weak algorithm (ECC-160)",
+          "Critical business system (8/10)",
+          "Old certificate (44 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 50 days."
+      }
+    },
+    {
+      "id": "VULN_0393",
+      "priority_rank": 8,
+      "priority_score": 91.42,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 2048,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.876,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 118,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Weak algorithm (RSA-2048)",
+          "Critical business system (9/10)",
+          "Old certificate (51 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 118 days."
+      }
+    },
+    {
+      "id": "VULN_0381",
+      "priority_rank": 9,
+      "priority_score": 91.3,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 521,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.8,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 81,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "High public exposure (8/10)",
+          "Critical business system (10/10)",
+          "Old certificate (41 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 81 days."
+      }
+    },
+    {
+      "id": "VULN_0416",
+      "priority_rank": 10,
+      "priority_score": 91.2,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 1024,
+        "system_type": "communication"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.961,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 56,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "High public exposure (9/10)",
+          "Weak algorithm (RSA-1024)",
+          "Compliance gap (0.75)",
+          "Old certificate (54 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 56 days."
+      }
+    },
+    {
+      "id": "VULN_0025",
+      "priority_rank": 11,
+      "priority_score": 91.03,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 2048,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.868,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 63,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Weak algorithm (RSA-2048)",
+          "Critical business system (9/10)",
+          "Old certificate (50 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 63 days."
+      }
+    },
+    {
+      "id": "VULN_0346",
+      "priority_rank": 12,
+      "priority_score": 90.37,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 2048,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.846,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 118,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (9/10)",
+          "Weak algorithm (RSA-2048)",
+          "Critical business system (10/10)",
+          "Old certificate (38 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 118 days."
+      }
+    },
+    {
+      "id": "VULN_0059",
+      "priority_rank": 13,
+      "priority_score": 90.21,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 2048,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.85,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 118,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Weak algorithm (RSA-2048)",
+          "Critical business system (9/10)",
+          "Old certificate (60 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 118 days."
+      }
+    },
+    {
+      "id": "VULN_0172",
+      "priority_rank": 14,
+      "priority_score": 90.18,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 1024,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.826,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 63,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (8/10)",
+          "Weak algorithm (DH-1024)",
+          "Critical business system (9/10)",
+          "Old certificate (58 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 63 days."
+      }
+    },
+    {
+      "id": "VULN_0049",
+      "priority_rank": 15,
+      "priority_score": 90.12,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 1024,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 99.42,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.88,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 45,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (8/10)",
+          "Weak algorithm (RSA-1024)",
+          "Old certificate (49 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 45 days."
+      }
+    },
+    {
+      "id": "VULN_0052",
+      "priority_rank": 16,
+      "priority_score": 90.11,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 1024,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.886,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 153,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (8/10)",
+          "Weak algorithm (RSA-1024)",
+          "Critical business system (8/10)",
+          "Old certificate (59 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 153 days."
+      }
+    },
+    {
+      "id": "VULN_0069",
+      "priority_rank": 17,
+      "priority_score": 89.89,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 1024,
+        "system_type": "signing"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.819,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 35,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Weak algorithm (DH-1024)",
+          "Old certificate (42 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 35 days."
+      }
+    },
+    {
+      "id": "VULN_0336",
+      "priority_rank": 18,
+      "priority_score": 89.88,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 2048,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.805,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 81,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (9/10)",
+          "Weak algorithm (DH-2048)",
+          "Critical business system (10/10)",
+          "Old certificate (60 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 81 days."
+      }
+    },
+    {
+      "id": "VULN_0420",
+      "priority_rank": 19,
+      "priority_score": 89.88,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 224,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.861,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 50,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (9/10)",
+          "Weak algorithm (ECC-224)",
+          "Critical business system (10/10)",
+          "Old certificate (41 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 50 days."
+      }
+    },
+    {
+      "id": "VULN_0328",
+      "priority_rank": 20,
+      "priority_score": 89.81,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 1024,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.916,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 67,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (8/10)",
+          "Weak algorithm (RSA-1024)",
+          "Old certificate (59 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 67 days."
+      }
+    },
+    {
+      "id": "VULN_0248",
+      "priority_rank": 21,
+      "priority_score": 89.66,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 1024,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.863,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 67,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Weak algorithm (DH-1024)",
+          "Old certificate (43 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 67 days."
+      }
+    },
+    {
+      "id": "VULN_0333",
+      "priority_rank": 22,
+      "priority_score": 89.54,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 3072,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.869,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 141,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Critical business system (8/10)",
+          "Old certificate (40 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 141 days."
+      }
+    },
+    {
+      "id": "VULN_0041",
+      "priority_rank": 23,
+      "priority_score": 89.21,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 160,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.73,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 94,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Weak algorithm (ECC-160)",
+          "Critical business system (9/10)",
+          "Old certificate (46 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 94 days."
+      }
+    },
+    {
+      "id": "VULN_0118",
+      "priority_rank": 24,
+      "priority_score": 89.16,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 160,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.729,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 50,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (8/10)",
+          "Weak algorithm (ECC-160)",
+          "Critical business system (10/10)",
+          "Old certificate (53 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 50 days."
+      }
+    },
+    {
+      "id": "VULN_0081",
+      "priority_rank": 25,
+      "priority_score": 89.15,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 1024,
+        "system_type": "signing"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.819,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 35,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Weak algorithm (DH-1024)",
+          "Compliance gap (0.74)",
+          "Old certificate (47 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 35 days."
+      }
+    },
+    {
+      "id": "VULN_0371",
+      "priority_rank": 26,
+      "priority_score": 89.03,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 160,
+        "system_type": "storage"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.736,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 63,
+        "migration_complexity": "Medium-High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Weak algorithm (ECC-160)",
+          "Critical business system (8/10)",
+          "Compliance gap (0.60)",
+          "Old certificate (26 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 63 days."
+      }
+    },
+    {
+      "id": "VULN_0448",
+      "priority_rank": 27,
+      "priority_score": 88.89,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 2048,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.873,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 63,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (9/10)",
+          "Weak algorithm (RSA-2048)",
+          "Critical business system (8/10)",
+          "Old certificate (59 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 63 days."
+      }
+    },
+    {
+      "id": "VULN_0292",
+      "priority_rank": 28,
+      "priority_score": 88.47,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 2048,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.878,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 63,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (9/10)",
+          "Weak algorithm (RSA-2048)",
+          "Critical business system (8/10)",
+          "Old certificate (40 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 63 days."
+      }
+    },
+    {
+      "id": "VULN_0230",
+      "priority_rank": 29,
+      "priority_score": 88.4,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 224,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.87,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 50,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "High public exposure (8/10)",
+          "Weak algorithm (ECC-224)",
+          "Critical business system (8/10)",
+          "Old certificate (45 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 50 days."
+      }
+    },
+    {
+      "id": "VULN_0078",
+      "priority_rank": 30,
+      "priority_score": 88.38,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 1024,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.952,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 50,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (9/10)",
+          "Weak algorithm (DH-1024)",
+          "Critical business system (9/10)",
+          "Old certificate (59 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 50 days."
+      }
+    },
+    {
+      "id": "VULN_0101",
+      "priority_rank": 31,
+      "priority_score": 88.34,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 2048,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.841,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 63,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "High public exposure (9/10)",
+          "Weak algorithm (DH-2048)",
+          "Critical business system (8/10)",
+          "Old certificate (37 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 63 days."
+      }
+    },
+    {
+      "id": "VULN_0323",
+      "priority_rank": 32,
+      "priority_score": 88.29,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 1024,
+        "system_type": "api"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.979,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 28,
+        "migration_complexity": "Low-Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "High public exposure (9/10)",
+          "Weak algorithm (RSA-1024)",
+          "Critical business system (8/10)",
+          "Old certificate (50 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 28 days."
+      }
+    },
+    {
+      "id": "VULN_0402",
+      "priority_rank": 33,
+      "priority_score": 88.17,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 1024,
+        "system_type": "api"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.986,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 25,
+        "migration_complexity": "Low-Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "High public exposure (9/10)",
+          "Weak algorithm (RSA-1024)",
+          "Old certificate (44 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 25 days."
+      }
+    },
+    {
+      "id": "VULN_0453",
+      "priority_rank": 34,
+      "priority_score": 87.99,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 3072,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.79,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 184,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (9/10)",
+          "Critical business system (9/10)",
+          "Old certificate (26 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 184 days."
+      }
+    },
+    {
+      "id": "VULN_0369",
+      "priority_rank": 35,
+      "priority_score": 87.98,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 3072,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.825,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 98,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Critical business system (8/10)",
+          "Old certificate (59 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 98 days."
+      }
+    },
+    {
+      "id": "VULN_0178",
+      "priority_rank": 36,
+      "priority_score": 87.9,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 2048,
+        "system_type": "signing"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.82,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 35,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "High public exposure (9/10)",
+          "Weak algorithm (DH-2048)",
+          "Old certificate (58 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 35 days."
+      }
+    },
+    {
+      "id": "VULN_0275",
+      "priority_rank": 37,
+      "priority_score": 87.86,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 2048,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.875,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 63,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Weak algorithm (RSA-2048)",
+          "Critical business system (9/10)",
+          "Old certificate (59 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 63 days."
+      }
+    },
+    {
+      "id": "VULN_0223",
+      "priority_rank": 38,
+      "priority_score": 87.77,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 2048,
+        "system_type": "communication"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.881,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 98,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "High public exposure (9/10)",
+          "Weak algorithm (RSA-2048)",
+          "Critical business system (8/10)",
+          "Old certificate (54 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 98 days."
+      }
+    },
+    {
+      "id": "VULN_0355",
+      "priority_rank": 39,
+      "priority_score": 87.77,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 2048,
+        "system_type": "api"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.822,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 20,
+        "migration_complexity": "Low-Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "High public exposure (9/10)",
+          "Weak algorithm (DH-2048)",
+          "Old certificate (54 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 20 days."
+      }
+    },
+    {
+      "id": "VULN_0142",
+      "priority_rank": 40,
+      "priority_score": 87.45,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 2048,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.798,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 67,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Weak algorithm (RSA-2048)",
+          "Old certificate (59 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 67 days."
+      }
+    },
+    {
+      "id": "VULN_0399",
+      "priority_rank": 41,
+      "priority_score": 87.41,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 160,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.724,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 63,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (8/10)",
+          "Weak algorithm (ECC-160)",
+          "Critical business system (9/10)",
+          "Old certificate (50 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 63 days."
+      }
+    },
+    {
+      "id": "VULN_0285",
+      "priority_rank": 42,
+      "priority_score": 87.26,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 1024,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.958,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 118,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (9/10)",
+          "Weak algorithm (RSA-1024)",
+          "Critical business system (8/10)",
+          "Old certificate (58 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 118 days."
+      }
+    },
+    {
+      "id": "VULN_0491",
+      "priority_rank": 43,
+      "priority_score": 87.08,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 384,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 91.94,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.793,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 94,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (9/10)",
+          "Critical business system (8/10)",
+          "Old certificate (50 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 94 days."
+      }
+    },
+    {
+      "id": "VULN_0128",
+      "priority_rank": 44,
+      "priority_score": 87.03,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 384,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.853,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 153,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (9/10)",
+          "Critical business system (9/10)",
+          "Old certificate (35 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 153 days."
+      }
+    },
+    {
+      "id": "VULN_0157",
+      "priority_rank": 45,
+      "priority_score": 86.94,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 1024,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.967,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 153,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Weak algorithm (DH-1024)",
+          "Critical business system (8/10)",
+          "Old certificate (49 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 153 days."
+      }
+    },
+    {
+      "id": "VULN_0080",
+      "priority_rank": 46,
+      "priority_score": 86.86,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 4096,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.81,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 60,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (10/10)",
+          "Critical business system (8/10)",
+          "Old certificate (51 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 60 days."
+      }
+    },
+    {
+      "id": "VULN_0306",
+      "priority_rank": 47,
+      "priority_score": 86.78,
+      "current_config": {
+        "algorithm": "ECC",
+        "key_size": 224,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.778,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "Falcon",
+        "estimated_effort_days": 118,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Weak algorithm (ECC-224)",
+          "Critical business system (9/10)",
+          "Old certificate (29 months)"
+        ],
+        "recommendation_rationale": "Migrate to Falcon for quantum resistance. Effort: 118 days."
+      }
+    },
+    {
+      "id": "VULN_0247",
+      "priority_rank": 48,
+      "priority_score": 86.77,
+      "current_config": {
+        "algorithm": "DH",
+        "key_size": 1024,
+        "system_type": "auth"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.985,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Kyber",
+        "estimated_effort_days": 50,
+        "migration_complexity": "Medium"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "Sensitive data (9/10)",
+          "Weak algorithm (DH-1024)",
+          "Critical business system (8/10)",
+          "Old certificate (48 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Kyber for quantum resistance. Effort: 50 days."
+      }
+    },
+    {
+      "id": "VULN_0374",
+      "priority_rank": 49,
+      "priority_score": 86.68,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 2048,
+        "system_type": "payment"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.888,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 94,
+        "migration_complexity": "High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "High public exposure (8/10)",
+          "Weak algorithm (RSA-2048)",
+          "Critical business system (8/10)",
+          "Old certificate (29 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 94 days."
+      }
+    },
+    {
+      "id": "VULN_0256",
+      "priority_rank": 50,
+      "priority_score": 86.62,
+      "current_config": {
+        "algorithm": "RSA",
+        "key_size": 3072,
+        "system_type": "storage"
+      },
+      "risk_assessment": {
+        "risk_score": 100.0,
+        "ml_risk_label": "Critical",
+        "ml_confidence": 0.84,
+        "quantum_vulnerable": true
+      },
+      "recommendation": {
+        "recommended_pqc": "CRYSTALS-Dilithium",
+        "estimated_effort_days": 99,
+        "migration_complexity": "Medium-High"
+      },
+      "migration": {
+        "timeline": "0-3 months (Immediate)"
+      },
+      "explainability": {
+        "top_risk_factors": [
+          "High public exposure (10/10)",
+          "Critical business system (8/10)",
+          "Old certificate (51 months)"
+        ],
+        "recommendation_rationale": "Migrate to CRYSTALS-Dilithium for quantum resistance. Effort: 99 days."
+      }
+    }
+  ]
+}

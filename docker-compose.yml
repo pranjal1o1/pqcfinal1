@@ -1,0 +1,106 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: quantum_crypto_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: quantum_user
+      POSTGRES_PASSWORD: quantum_pass_2024
+      POSTGRES_DB: quantum_crypto_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U quantum_user" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - quantum_network
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: quantum_crypto_backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://quantum_user:quantum_pass_2024@postgres:5432/quantum_crypto_db
+      PYTHONUNBUFFERED: 1
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app
+      - ./ai_outputs:/app/ai_outputs
+      - ./reports:/app/reports
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - quantum_network
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # pgAdmin for Database Management (Optional)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: quantum_crypto_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@quantum.local
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - quantum_network
+
+volumes:
+  postgres_data:
+
+
+networks:
+  quantum_network:
+    driver: bridge
+
+
+# React Frontend
+  frontend:
+    build: ./frontend
+    container_name: quantum_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_BASE_URL=http://backend:8000
+    depends_on:
+      - backend
+    networks:
+      - quantum_network
+
+  # Nginx Reverse Proxy (Production)
+  nginx:
+    image: nginx:alpine
+    container_name: quantum_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - quantum_network
+
+volumes:
+  postgres_data:
+
+networks:
+  quantum_network:
+    driver: bridge

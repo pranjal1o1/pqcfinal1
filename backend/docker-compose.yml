@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: crypto_analyzer_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/crypto_analyzer
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./ai_outputs:/app/ai_outputs:ro
+      - ./uploads:/app/uploads
+      - ./reports:/app/reports
+    depends_on:
+      - db
+    restart: unless-stopped
+    networks:
+      - crypto_network
+
+  db:
+    image: postgres:15-alpine
+    container_name: crypto_analyzer_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=crypto_analyzer
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - crypto_network
+
+volumes:
+  postgres_data:
+
+
+networks:
+  crypto_network:
+    driver: bridge
