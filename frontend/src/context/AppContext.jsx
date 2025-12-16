@@ -1,7 +1,10 @@
-import { createContext, useContext, useState, useEffect } from 'react';
-import { api } from '../api/apiService';
+// ========================================
+// src/context/AppContext.jsx
+// ========================================
+import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import { NOTIFICATION_DURATION } from '../utils/constants';
 
-const AppContext = createContext();
+const AppContext = createContext(null);
 
 export const useApp = () => {
     const context = useContext(AppContext);
@@ -12,120 +15,95 @@ export const useApp = () => {
 };
 
 export const AppProvider = ({ children }) => {
-    const [scans, setScans] = useState([]);
-    const [currentScan, setCurrentScan] = useState(null);
-    const [dashboard, setDashboard] = useState(null);
+    const [notifications, setNotifications] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const [groqAvailable, setGroqAvailable] = useState(false);
+    const [user, setUser] = useState(null);
+    const [theme, setTheme] = useState('dark');
 
-    // Check backend health on mount
+    // Auto-remove notifications after duration
     useEffect(() => {
-        checkHealth();
-        checkGroqStatus();
+        if (notifications.length > 0) {
+            const timer = setTimeout(() => {
+                setNotifications((prev) => prev.slice(1));
+            }, NOTIFICATION_DURATION);
+
+            return () => clearTimeout(timer);
+        }
+    }, [notifications]);
+
+    // Add notification
+    const addNotification = useCallback((message, type = 'info') => {
+        const id = Date.now() + Math.random();
+        setNotifications((prev) => [...prev, { id, message, type }]);
     }, []);
 
-    const checkHealth = async () => {
-        try {
-            await api.healthCheck();
-        } catch (err) {
-            setError('Backend is not reachable');
-        }
-    };
+    // Remove specific notification
+    const removeNotification = useCallback((id) => {
+        setNotifications((prev) => prev.filter((n) => n.id !== id));
+    }, []);
 
-    const checkGroqStatus = async () => {
-        try {
-            const status = await api.getGroqStatus();
-            setGroqAvailable(status.groq_available);
-        } catch (err) {
-            setGroqAvailable(false);
-        }
-    };
+    // Success notification
+    const showSuccess = useCallback((message) => {
+        addNotification(message, 'success');
+    }, [addNotification]);
 
-    const loadDashboard = async () => {
-        try {
-            setLoading(true);
-            const data = await api.getDashboard();
-            setDashboard(data);
-            setError(null);
-        } catch (err) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
-        }
-    };
+    // Error notification
+    const showError = useCallback((message) => {
+        addNotification(message, 'error');
+    }, [addNotification]);
 
-    const loadScans = async () => {
-        try {
-            setLoading(true);
-            const data = await api.listScans(20);
-            setScans(data.scans || []);
-            setError(null);
-        } catch (err) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
-        }
-    };
+    // Info notification
+    const showInfo = useCallback((message) => {
+        addNotification(message, 'info');
+    }, [addNotification]);
 
-    const loadScanResults = async (scanId) => {
-        try {
-            setLoading(true);
-            const data = await api.getScanResults(scanId);
-            setCurrentScan(data);
-            setError(null);
-            return data;
-        } catch (err) {
-            setError(err.message);
-            throw err;
-        } finally {
-            setLoading(false);
-        }
-    };
+    // Clear all notifications
+    const clearNotifications = useCallback(() => {
+        setNotifications([]);
+    }, []);
 
-    const uploadAndScan = async (file) => {
-        try {
-            setLoading(true);
-            const result = await api.uploadScan(file);
-            await loadScans();
-            setError(null);
-            return result;
-        } catch (err) {
-            setError(err.message);
-            throw err;
-        } finally {
-            setLoading(false);
-        }
-    };
+    // Set global loading state
+    const setGlobalLoading = useCallback((isLoading) => {
+        setLoading(isLoading);
+    }, []);
 
-    const scanRepository = async (repoUrl, branch) => {
-        try {
-            setLoading(true);
-            const result = await api.scanRepo(repoUrl, branch);
-            await loadScans();
-            setError(null);
-            return result;
-        } catch (err) {
-            setError(err.message);
-            throw err;
-        } finally {
-            setLoading(false);
-        }
-    };
+    // Update user
+    const updateUser = useCallback((userData) => {
+        setUser(userData);
+    }, []);
+
+    // Logout
+    const logout = useCallback(() => {
+        setUser(null);
+        localStorage.removeItem('auth_token');
+        showSuccess('Logged out successfully');
+    }, [showSuccess]);
+
+    // Toggle theme
+    const toggleTheme = useCallback(() => {
+        setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+    }, []);
 
     const value = {
-        scans,
-        currentScan,
-        dashboard,
+        // State
+        notifications,
         loading,
-        error,
-        groqAvailable,
-        setError,
-        loadDashboard,
-        loadScans,
-        loadScanResults,
-        uploadAndScan,
-        scanRepository,
+        user,
+        theme,
+
+        // Notification methods
+        addNotification,
+        removeNotification,
+        showSuccess,
+        showError,
+        showInfo,
+        clearNotifications,
+
+        // Global methods
+        setGlobalLoading,
+        updateUser,
+        logout,
+        toggleTheme,
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
