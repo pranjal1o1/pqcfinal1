@@ -1,0 +1,37 @@
+{
+  "shap_analysis": {
+    "total_samples_analyzed": 100,
+    "top_5_influential_features": [
+      {
+        "feature": "data_sensitivity",
+        "mean_importance": 0.0226,
+        "interpretation": "This feature has an average impact of 0.0226 on model predictions"
+      },
+      {
+        "feature": "algorithm_strength_score",
+        "mean_importance": 0.0235,
+        "interpretation": "This feature has an average impact of 0.0235 on model predictions"
+      },
+      {
+        "feature": "system_type_encoded",
+        "mean_importance": 0.0599,
+        "interpretation": "This feature has an average impact of 0.0599 on model predictions"
+      },
+      {
+        "feature": "public_exposure",
+        "mean_importance": 0.0676,
+        "interpretation": "This feature has an average impact of 0.0676 on model predictions"
+      },
+      {
+        "feature": "cert_age_months",
+        "mean_importance": 0.0919,
+        "interpretation": "This feature has an average impact of 0.0919 on model predictions"
+      }
+    ],
+    "most_influential_feature": {
+      "name": "cert_age_months",
+      "importance": 0.0919
+    },
+    "explanation": "SHAP values show how much each feature contributes to pushing the model output from the base value (average prediction) to the actual prediction."
+  }
+}
